@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Dentista - Uniodonto</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #800029; /* cor da logo */
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      width: 350px;
+      text-align: center;
+    }
+
+    .card img {
+      width: 90px;
+      margin-bottom: 10px;
+    }
+
+    .card h2 {
+      color: #800029;
+      margin-bottom: 20px;
+    }
+
+    .card input {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 14px;
+    }
+
+    .card button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      background: #800029;
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .card button:hover {
+      background: #a0003a;
+    }
+
+    .card p {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .card a {
+      color: #800029;
+      text-decoration: none;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img src="unidonto.png.png" alt="Logo Uniodonto">
+    <h2>Login Dentista</h2>
+    
+    <form onsubmit="return validarLogin(event)">
+      <input type="Usuário" id="Usuário" placeholder="Usuário" required>
+      <input type="senha" id="senha" placeholder="Senha" required>
+      <button type="submit">Entrar</button>
+    </form>
+    <p>
+      Esqueceu a senha? <a href="#">Recuperar</a>
+    </p>
+  </div>
+
+  <script>
+    function validarLogin(event) {
+      event.preventDefault(); 
+      
+     
+      const Usuário = document.getElementById("Usuário").value;
+      const senha = document.getElementById("senha").value;
+
+     
+      const usuarioCorreto = "admin";
+      const senhaCorreta = "123456";
+
+      if (Usuário === usuarioCorreto && senha === senhaCorreta) {
+        
+        window.location.href = "index.html";
+      } else {
+        alert("Usuário ou senha incorretos!");
+      }
+    }
+  </script>
+</body>
+</html>
